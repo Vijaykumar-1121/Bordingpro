@@ -79,5 +79,21 @@ BoardingPro is a web application designed to optimize the bus boarding process. 
 3. **Run the Frontend:**
    - Navigate to the `frontend` folder.
    - Open `index.html` directly in your web browser.
+  
+     
+<table>
+  <tr>
+    <td align="center">
+      <img width="500" height="1500" alt="image" src="https://github.com/user-attachments/assets/032a4452-bf5b-448f-8b8f-f64e902ebc71" />
+      <br><sub>Home Page</sub>
+    </td>
+    <td align="center">
+      <img width="500" height="1000" alt="image" src="https://github.com/user-attachments/assets/3180f611-7a6b-4b0f-9e08-90afd5e9d7de" />
+      <br><sub>Result Page</sub>
+    </td>
+  </tr>
+</table>
+  
+    
 
 You can now upload a CSV file and view the optimized boarding sequence in action.

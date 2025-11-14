@@ -1,0 +1,305 @@
+/* --- ========================= --- */
+/* --- RESULTS-SPECIFIC STYLES --- */
+/* --- ========================= --- */
+
+/* Note: This file relies on common styles from style.css */
+
+.results-nav {
+    margin-bottom: 3rem;
+}
+
+.results-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+}
+
+.results-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 1rem 0;
+    color: var(--text-color);
+}
+
+.results-header p {
+    font-size: 1.1rem;
+    color: var(--light-text-color);
+    line-height: 1.6;
+}
+
+.results-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+/* --- Bus Layout Container --- */
+#bus-layout-container {
+    background-color: var(--panel-bg-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    position: sticky;
+    top: 1.5rem;
+}
+
+#bus-layout-container h3 {
+    margin-top: 0;
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Bus Layout Visual Styles --- */
+.bus-front {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem 1rem 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 1rem;
+}
+
+.driver-cab,
+.bus-entry {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--light-text-color);
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+}
+
+.driver-cab {
+    border: 2px dashed var(--border-color);
+}
+
+.bus-entry {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.bus-layout {
+    background-color: #e9ecf0;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem 1rem 1rem 1rem;
+    margin-top: 1rem;
+    position: relative;
+    /* Removed scrollbar */
+}
+
+.seat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.row-number {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--light-text-color);
+    width: 24px;
+    text-align: center;
+}
+
+.seat,
+.aisle-space {
+    width: 28px;
+    height: 32px;
+    border-radius: 7px 7px 3px 3px;
+}
+
+.aisle-space {
+    visibility: hidden;
+}
+
+.seat {
+    background-color: #b0bec5;
+    border-top: 6px solid #78909c;
+    cursor: default;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 3px;
+    font-size: 0.7rem;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.seat.boarding {
+    background-color: var(--primary-color);
+    border-top-color: var(--primary-color-dark);
+    color: white;
+    transform: scale(1.15);
+}
+
+/* Person Animator */
+.person-animator {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 6px;
+    opacity: 0;
+    transition: top 1s ease-in-out, opacity 0.3s ease-in-out;
+    z-index: 10;
+}
+
+.person-animator.visible {
+    opacity: 1;
+}
+
+/* --- Results Page Boarding List --- */
+.boarding-order-list {
+    background-color: var(--panel-bg-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+/* Integrated Stats Panel */
+.stats-panel-integrated {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.stats-panel-integrated .card {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.stats-panel-integrated .card-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--text-color);
+}
+
+.stats-panel-integrated .card-label {
+    font-size: 0.8rem;
+    color: var(--light-text-color);
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+}
+
+.list-header h4 {
+    margin: 0;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.list-header span {
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+}
+
+#results-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 450px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+#results-list li {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1.5rem;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease;
+}
+
+#results-list li:hover {
+    background-color: var(--panel-bg-color);
+}
+
+#results-list li.highlighting {
+    background-color: #e8e6ff;
+    border-color: var(--primary-color-dark);
+}
+
+.booking-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-meta {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.meta-tag {
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+}
+
+.row-tag {
+    background-color: #e8e6ff;
+    color: var(--primary-color);
+}
+
+.seat-count-tag {
+    background-color: #f0f0f0;
+    color: var(--light-text-color);
+}
+
+/* Shared List Styles */
+.sequence-number {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    font-weight: 600;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.booking-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-id {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.booking-seats {
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+}

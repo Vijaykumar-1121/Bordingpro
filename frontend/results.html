@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Boarding Sequence - BoardingPro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- ===== RESULTS PAGE VIEW (Hidden by default) ===== -->
+        <header id="navbar-results" class="navbar results-nav">
+            <div class="logo">BoardingPro</div>
+            <div class="nav-buttons">
+                <a href="index.html" id="back-btn" class="btn btn-secondary">← Back to Home</a>
+                <button id="download-csv-btn" class="btn btn-primary">Download CSV</button>
+            </div>
+        </header>
+
+        <main id="results-main" class="results-main">
+            <div class="results-header">
+                <svg width="40" height="40" viewBox="0 0 24 24"><path fill="#22c55e" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/></svg>
+                <h1>Boarding Sequence Generated</h1>
+                <p>Your optimized boarding sequence is ready. Passengers are ordered by seat distance from the front entry, with those farthest from the entry boarding first.</p>
+            </div>
+
+            <div class="stats-cards">
+                <div class="card"><span class="card-value" id="total-bookings">--</span><span class="card-label">Total Bookings</span></div>
+                <div class="card"><span class="card-value" id="time-saved">~40%</span><span class="card-label">Time Saved</span></div>
+                <div class="card"><span class="card-value" id="farthest-row">--</span><span class="card-label">Farthest Row</span></div>
+            </div>
+
+            <div class="results-content-grid">
+                <!-- Left Column: Bus Layout -->
+                <div id="bus-layout-container">
+                    <h3>VISUAL LAYOUT</h3>
+                    <div id="bus-layout" class="bus-layout">
+                        <!-- JS will generate seats here -->
+                    </div>
+                </div>
+
+                <!-- Right Column: Boarding List -->
+                <div class="boarding-order-list">
+                    <div class="list-header">
+                        <h4>Optimized Boarding Order</h4>
+                        <span id="booking-count-display"></span>
+                    </div>
+                    <ul id="results-list"><!-- JavaScript will populate this list --></ul>
+                </div>
+            </div>
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer">
+            <div class="logo">BoardingPro</div>
+            <p>© 2025 BoardingPro. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="result.js"></script>
+</body>
+</html>

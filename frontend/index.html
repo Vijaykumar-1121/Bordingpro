@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoardingPro - Optimize Your Bus Boarding</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- ===== HOMEPAGE VIEW (Visible by default) ===== -->
+        <header id="navbar-main" class="navbar">
+            <div class="logo">BoardingPro</div>
+            <nav>
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#about">About</a>
+            </nav>
+            <div class="nav-buttons">
+                <button class="btn btn-secondary">Learn More</button>
+                <button class="btn btn-primary">Get Started</button>
+            </div>
+        </header>
+
+        <main id="homepage-main">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1>Optimize your <br><span class="highlight">boarding process</span></h1>
+                    <p>Transform chaotic boarding into an efficient, organized sequence. Upload your booking data and get an optimized boarding order that minimizes wait times and maximizes passenger satisfaction.</p>
+                    
+                    <form id="upload-form" class="upload-form">
+                        <label for="file-upload" class="custom-file-upload">
+                            <span id="file-name">No file chosen</span>
+                        </label>
+                        <input id="file-upload" type="file" accept=".csv" />
+                        <button type="submit" id="submit-btn" class="btn btn-primary">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 4V16M12 16L17 11M12 16L7 11M4 20H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Generate Sequence
+                        </button>
+                    </form>
+                    <p id="error-message" class="error-message"></p>
+                    <p class="csv-hint">CSV should contain columns: Booking_ID, Seats (e.g., "1A" or "A1")</p>
+                </div>
+                
+                <div class="smart-algorithm-panel">
+                    <h4>Smart Algorithm</h4>
+                    <p>Prioritizes passengers with seats farthest from entry.</p>
+                    <div class="sample-boarding-order">
+                        <h5>SAMPLE BOARDING ORDER</h5>
+                        <ul>
+                            <li><span class="sequence-number">1</span><div class="booking-details"><span class="booking-id">BK001</span><span class="booking-seats">A20, A21</span></div></li>
+                            <li><span class="sequence-number">2</span><div class="booking-details"><span class="booking-id">BK003</span><span class="booking-seats">B19</span></div></li>
+                            <li><span class="sequence-number">3</span><div class="booking-details"><span class="booking-id">BK002</span><span class="booking-seats">A15, A16</span></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <section id="how-it-works" class="section-container">
+                <div class="section-header">
+                    <h2>How It Works</h2>
+                    <p>Generate an optimized boarding sequence in three simple steps.</p>
+                </div>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Upload Data</h3>
+                        <p>Simply upload your CSV file containing passenger booking IDs and their assigned seats.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Process Algorithm</h3>
+                        <p>Our smart algorithm analyzes seat positions (like 1A or A1) and groups passengers based on a "Back-to-Front" strategy.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Get Sequence</h3>
+                        <p>Receive a clear, ordered list that's ready to use, minimizing aisle congestion and boarding time.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="features" class="section-container">
+                <div class="section-header">
+                    <h2>Features</h2>
+                    <p>Everything you need to streamline passenger boarding.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Smart Sorting</h3>
+                        <p>Uses a "Back-to-Front, Window-to-Aisle" method to drastically reduce passenger interference.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Visual Layout</h3>
+                        <p>See the boarding sequence animate on a visual bus map, group by group, for a clear overview.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Download & Go</h3>
+                        <p>Easily download the generated sequence as a clean CSV file, perfect for gate agents or staff.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer">
+            <div class="logo">BoardingPro</div>
+            <p>© 2025 BoardingPro. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
